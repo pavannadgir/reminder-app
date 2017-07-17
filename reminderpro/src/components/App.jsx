@@ -23,14 +23,14 @@ class App extends Component{
   renderReminders(){
     const { reminders } = this.props;
     return(
-      <ul className="list-group col-sm-4">
+      <ul className="list-group col-sm-6">
         {
           reminders.map(reminder => {
             return (
               <li key={reminder.id} className="list-group-item">
                 <div>
                   <span>{reminder.text}</span>
-                  <span className="pull-right" onClick={() => this.deleteReminder(reminder.id)}>&#x2715;</span>
+                  <span className="remove-icon" onClick={() => this.deleteReminder(reminder.id)}>&#x2715;</span>
                 </div>
                 <span><em>{moment(new Date(reminder.dueDate)).fromNow()}</em></span>
 
